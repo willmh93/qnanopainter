@@ -61,6 +61,9 @@ public:
     // Set the framebuffer of the image
     void setFrameBuffer(const QOpenGLFramebufferObject *fbo);
 
+	// Update the active framebuffer image data
+    void updateFrameBuffer(QNanoPainter* p);
+
     // Set the flags for image
     void setFlags(ImageFlags flags);
 

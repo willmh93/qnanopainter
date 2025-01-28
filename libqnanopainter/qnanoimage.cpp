@@ -133,6 +133,13 @@ void QNanoImage::setFrameBuffer(const QOpenGLFramebufferObject *fbo)
     updateUniqueKey();
 }
 
+void QNanoImage::updateFrameBuffer(QNanoPainter* p)
+{
+    m_parentPainter = p;
+    getID(p->nvgCtx());
+    nvgUpdateImage(p->nvgCtx(), m_imageData->id, m_image->bits());
+}
+
 /*!
     \fn void QNanoImage::setFlags(ImageFlags flags)
 
