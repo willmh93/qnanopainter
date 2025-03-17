@@ -37,6 +37,7 @@
 #include "qnanoimagepattern.h"
 #include "qnanofont.h"
 
+class GLEngineAbstract;
 struct NVGcontext;
 
 class QNanoPainter
@@ -251,6 +252,8 @@ public:
     }
 
 private:
+
+    friend class GLEngineAbstract;
 
     friend class QNanoDebug;
     friend class QNanoWindow;
