@@ -133,11 +133,11 @@ void QNanoImage::setFrameBuffer(const QOpenGLFramebufferObject *fbo)
     updateUniqueKey();
 }
 
-void QNanoImage::updateFrameBuffer(QNanoPainter* p)
+void QNanoImage::updateImage(QNanoPainter* painter)
 {
-    m_parentPainter = p;
-    getID(p->nvgCtx());
-    nvgUpdateImage(p->nvgCtx(), m_imageData->id, m_image->bits());
+    m_parentPainter = painter;
+    getID(painter->nvgCtx());
+    nvgUpdateImage(painter->nvgCtx(), m_imageData->id, m_image->bits());
 }
 
 /*!
